@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 export default function SignUp ({ user, setUser }) {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  // navigate=useNavigate()
   function handleSubmit(e) {
     e.preventDefault();
     setErrors([]);
@@ -19,7 +20,7 @@ export default function SignUp ({ user, setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
+        name,
         email,
         password,
         password_confirmation: passwordConfirmation,
@@ -37,16 +38,16 @@ export default function SignUp ({ user, setUser }) {
   return (
     <>
         {/* FORWARD PATH */}
-        {/* { user ? <Navigate to="/" /> : null} */}
+        { user ? <Navigate to="/" /> : null}
 
         <form onSubmit={handleSubmit}>
             <input
             type="text"
-            id="username"
+            id="name"
             autoComplete="off"
-            placeholder="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            placeholder="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             />
             <input
             type="text"

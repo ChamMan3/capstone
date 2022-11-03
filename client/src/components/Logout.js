@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
 export default function Logout ({ user, setUser }) {
@@ -16,7 +16,7 @@ export default function Logout ({ user, setUser }) {
     return (
         <>
             {/* FORWARD PATH */}
-            {/* { isLogout ? <Navigate to="/" /> : null} */}
+            { isLogout ? <Navigate to="/" /> : null}
 
             <button onClick={handleLogout}>Log Out</button>
         </>

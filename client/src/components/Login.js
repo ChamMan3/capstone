@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Error from './Error'
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 export default function Login ({ user, setUser }) {
-    const [username, setUsername] = useState("");
+    const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -16,7 +16,7 @@ export default function Login ({ user, setUser }) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ username, password }),
+          body: JSON.stringify({ name, password }),
         }).then((r) => {
           setIsLoading(false);
           if (r.ok) {
@@ -30,15 +30,15 @@ export default function Login ({ user, setUser }) {
       return (
         <>
           {/* FORWARD PATH */}
-          {/* { user ? <Navigate to="/" /> : null} */}
+          { user ? <Navigate to="/" /> : null}
           
           <form onSubmit={handleSubmit}>
               <input
                 type="text"
-                id="username"
+                id="name"
                 autoComplete="off"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <input
                 type="password"

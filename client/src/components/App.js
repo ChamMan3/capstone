@@ -5,7 +5,8 @@ import NavBar from "./NavBar"
 import Profile from "./Profile"
 import Search from "./Search"
 import Login from "./Login"
-import Lyrics from "./Lyrics";
+import Home from "./Home"
+import Logout from "./Logout";
 
 
 
@@ -28,12 +29,12 @@ export default function App() {
         {/* { !currentUser? <Login error={'please login'} updateUser={updateUser} /> : */}
       <>
         <Routes>
-          <Route path="/profile" element={<Profile />}/>
+          <Route path="/profile" element={<Profile user={user} setUser={setUser}/>}/>
           <Route path="/search" element={<Search /> }/>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />}/>
-          <Route path="/" element={<Lyrics/>}/>
-        </Routes>
+          <Route path="/login" element={<Login user={user} setUser={setUser}/>} />
+          <Route path="/signup" element={<Signup user={user} setUser={setUser}/>}/>
+          <Route path="/" element={<Home/>}/>
+        </Routes> 
       </>
       </div>
     );
