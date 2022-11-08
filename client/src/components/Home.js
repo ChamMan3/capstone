@@ -1,5 +1,8 @@
 import React from "react";
 
-export default function Home(){
-    return <p>You're in Home</p>
+export default function Home({user}){
+    return (
+    
+    <p>You're in Home</p>
+    )
 }

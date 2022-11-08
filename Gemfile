@@ -48,3 +48,10 @@ end
 
 
 gem "active_model_serializers", "~> 0.10.13"
+
+
+gem 'omniauth' # See https://github.com/omniauth/omniauth-github
+
+gem 'omniauth-genius' # Also https://github.com/Genius/omniauth-genius
+gem "omniauth-rails_csrf_protection"
+gem 'dotenv-rails'

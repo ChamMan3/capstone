@@ -18,7 +18,7 @@ export default function Logout ({ user, setUser }) {
             {/* FORWARD PATH */}
             { isLogout ? <Navigate to="/" /> : null}
 
-            <button onClick={handleLogout}>Log Out</button>
+           <button onClick={handleLogout}>Log Out</button>
         </>
     )
 }
