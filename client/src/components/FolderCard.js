@@ -34,9 +34,9 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
     return (
         <li className="card">
             
-          <p>{name}</p>
+          <p>{name} "test"</p>
           <p>{details}</p>
-          <button onClick={handleDeleteFolderClick}>Delete</button>
+          <button onClick={handleDeleteFolderClick}>Delete Folder</button>
           <form onSubmit={handleUpdateFolderSubmit}>
             <input
               type="text"
@@ -53,7 +53,7 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
             <button type="submit">Edit me</button>
     
           </form>
-                {songs.map((song) => {
+                {/* {songs.map((song) => {
                  if(song.folder_id===id) {
                   return (
                   
@@ -61,7 +61,7 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
             <p key={song.id}> {song.title} {song.artist} {song.album}</p> 
     
           )}
-          })}
+          })} */}
           
         </li>
       );

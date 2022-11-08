@@ -3,9 +3,11 @@ import FolderList from "./FolderList"
 import FolderForm from "./FolderForm"
 export default function Folders ({user, folders, setFolders, songs, setSongs}) {
 
-    function handleCreateFolder(newFolders) {
-        const updatedFoldersArray = [...user.folders, newFolders];
-        setFolders(updatedFoldersArray);
+    function handleCreateFolder(newFolder) {
+        if (user.folders === []) {
+              const updatedFoldersArray = [...user.folders, newFolder];
+            setFolders(updatedFoldersArray); }
+            else (setFolders(newFolder))
       }
 
       function handleUpdateFolder(updatedFolder) {
@@ -16,11 +18,11 @@ export default function Folders ({user, folders, setFolders, songs, setSongs}) {
             return folder;
           }
         });
-        setEvents(updatedFoldersArray);
+        setFolders(updatedFoldersArray);
       }
 
       function handleDeleteFolder(id) {
-        const updatedFoldersArray = user.events.filter((event) => event.id !== id);
+        const updatedFoldersArray = user.folders.filter((folder) => folder.id !== id);
         setFolders(updatedFoldersArray);
       }
 
@@ -29,9 +31,10 @@ export default function Folders ({user, folders, setFolders, songs, setSongs}) {
 
 
     return(
-        <>
-            <FolderList user={user} folders={folders} handleDeleteFolder={handleDeleteFolder} handleUpdateFolder={handleUpdateFolder} songs={songs} setSongs={setSongs}/>
+        <div>
+            
             <FolderForm user={user} handleCreateFolder={handleCreateFolder}/>
-        </>
+            <FolderList user={user} folders={folders} handleDeleteFolder={handleDeleteFolder} handleUpdateFolder={handleUpdateFolder} songs={songs} setSongs={setSongs}/>
+        </div>
     )
 }

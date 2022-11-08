@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Error from './Error'
 import { Navigate } from 'react-router-dom';
 
-export default function Login ({ user, setUser }) {
+export default function Login ({ user, setUser, setSongs, setFolders }) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -20,7 +20,11 @@ export default function Login ({ user, setUser }) {
         }).then((r) => {
           setIsLoading(false);
           if (r.ok) {
-            r.json().then((data) => setUser(data));
+            r.json().then((data) => {
+              setUser(data);
+              // setSongs(data)
+              setFolders(data.folders)
+            });
           } else {
             r.json().then((err) => setErrors(err.errors));
           }

@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   resources :articles
-  resources :folders
+  resources :folders, only: [:index, :create, :delete, :update, :show]
   resources :songs
-  resources :artists
-  resources :albums
   resources :users
   resources :sessions, only: [:create, :delete]
   
@@ -15,6 +13,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#delete"
 
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get '/login', to: 'sessions#new'
+  # get 'auth/:provider/callback', to: 'sessions#create'
+  # get '/login', to: 'sessions#new'
 end

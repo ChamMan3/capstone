@@ -1,8 +1,8 @@
 import React, {useState} from "react"
 
-export default function FolderForm({user, handleAddFolder}){
-    const [folderName, setFolderName] = useState('')
-    // const [details, setDetails] = useState('') might wanna add this guy as a description for individual folders
+export default function FolderForm({user, handleCreateFolder}){
+    const [name, setFolderName] = useState('')
+    const [details, setDetails] = useState('') 
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -13,14 +13,16 @@ export default function FolderForm({user, handleAddFolder}){
           },
           body: JSON.stringify({
             
-            folderName: folderName,
+            title: name,
+            details: details,
+            user_id: user.id
             
           }),
         })
           .then((r) => r.json())
           .then((newFolder) => {
           console.log(newFolder)
-          handleAddFolder(newFolder)
+          handleCreateFolder(newFolder)
           
         });
     }
@@ -33,16 +35,16 @@ export default function FolderForm({user, handleAddFolder}){
                 type="text"
                 name="name"
                 placeholder="Folder Name"
-                value={folderName}
+                value={name}
                 onChange={(e) => setFolderName(e.target.value)}
               />
-              {/* <input
+              <input
                 type="text"
                 name="details"
-                placeholder="Event Details"
+                placeholder= "Details"
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
-              /> */}
+              />
               <button type="submit">Create Folder</button>
             </form>
           </>

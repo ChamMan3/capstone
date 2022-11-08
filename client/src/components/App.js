@@ -27,8 +27,8 @@ export default function App() {
         <Routes>
           <Route path="/profile" element={<Profile user={user} setUser={setUser} folders={folders} setFolders={setFolders} songs={songs} setSongs={setSongs} />}/>
           <Route path="/search" element={<Search setSongs={setSongs}/> }/>
-          <Route path="/login" element={<Login user={user} setUser={setUser}/>} />
-          <Route path="/signup" element={<Signup user={user} setUser={setUser}/>}/>
+          <Route path="/login" element={<Login user={user} setUser={setUser} setFolders={setFolders} setSongs={setSongs}/>} />
+          <Route path="/signup" element={<Signup user={user} setUser={setUser} setFolders={setFolders} setSongs={setSongs}/>}/>
           <Route path="/" element={<Home user={user}/>}/>
         </Routes> 
       </>

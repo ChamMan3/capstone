@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_08_184910) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_08_214806) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_184910) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "folder_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["folder_id"], name: "index_articles_on_folder_id"
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "folders", force: :cascade do |t|
@@ -26,6 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_184910) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "details"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_folders_on_user_id"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -35,6 +41,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_184910) do
     t.datetime "updated_at", null: false
     t.string "album"
     t.string "artist"
+    t.bigint "folder_id", null: false
+    t.index ["folder_id"], name: "index_songs_on_folder_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_184910) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "articles", "folders"
+  add_foreign_key "articles", "users"
+  add_foreign_key "folders", "users"
+  add_foreign_key "songs", "folders"
 end

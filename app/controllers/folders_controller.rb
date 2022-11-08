@@ -1,5 +1,8 @@
 class FoldersController < ApplicationController
-    def index
+    
+    skip_before_action :authorized_user, only: [:create, :index]
+
+     def index
         render json: Folder.all
      end
      
@@ -32,6 +35,6 @@ class FoldersController < ApplicationController
      end
  
      def folder_params
-         params.permit(:title, :user_id)
+         params.permit(:title, :details, :user_id)
      end
 end

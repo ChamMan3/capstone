@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navigate } from 'react-router-dom';
 
-export default function SignUp ({ user, setUser }) {
+export default function SignUp ({ user, setUser, setSongs, setFolders}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +28,12 @@ export default function SignUp ({ user, setUser }) {
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => {
+          setUser(user)
+          // setSongs(user)
+          setFolders(user.folders)
+        }
+        );
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
