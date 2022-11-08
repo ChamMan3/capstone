@@ -2,9 +2,8 @@ import React, {useState} from "react"
 
 export default function FolderCard({ songs, user, folder, handleDeleteFolder, handleUpdateFolder}) {
     const [updatedName, setUpdatedName] = useState("")
-    // const [updatedDetails, setUpdatedDetails] = useState("") same purpose as before
-
-    const { id, name } = folder
+    const [updatedDetails, setUpdatedDetails] = useState("")
+    const { id, name, details } = folder
 
     function handleDeleteFolderClick() {
         fetch(`/folders/${id}`, {
@@ -23,7 +22,7 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
             },
             body : JSON.stringify({
                 name: updatedName,
-                // details: updatedDetails
+                details: updatedDetails
             }),
         })
         .then((r) => r.json())
@@ -36,7 +35,7 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
         <li className="card">
             
           <p>{name}</p>
-          {/* <p>{details}</p> */}
+          <p>{details}</p>
           <button onClick={handleDeleteFolderClick}>Delete</button>
           <form onSubmit={handleUpdateFolderSubmit}>
             <input
@@ -45,12 +44,12 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
               value={updatedName}
               onChange={(e) => setUpdatedName(e.target.value)}
             />
-            {/* <input
+            <input
               type="text"
               placeholder=":{"
               value={updatedDetails}
               onChange={(e) => setUpdatedDetails(e.target.value)}
-            /> */}
+            />
             <button type="submit">Edit me</button>
     
           </form>
