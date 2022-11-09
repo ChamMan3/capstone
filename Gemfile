@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.4"
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
@@ -50,8 +52,8 @@ end
 gem "active_model_serializers", "~> 0.10.13"
 
 
-gem 'omniauth' # See https://github.com/omniauth/omniauth-github
+# gem 'omniauth' # See https://github.com/omniauth/omniauth-github
 
-gem 'omniauth-genius' # Also https://github.com/Genius/omniauth-genius
-gem "omniauth-rails_csrf_protection"
-gem 'dotenv-rails'
+# gem 'omniauth-genius' # Also https://github.com/Genius/omniauth-genius
+# gem "omniauth-rails_csrf_protection"
+# gem 'dotenv-rails'

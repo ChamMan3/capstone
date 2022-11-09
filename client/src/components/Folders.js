@@ -4,11 +4,13 @@ import FolderForm from "./FolderForm"
 export default function Folders ({user, folders, setFolders, songs, setSongs}) {
 
     function handleCreateFolder(newFolder) {
-        if (user.folders === []) {
-              const updatedFoldersArray = [...user.folders, newFolder];
-            setFolders(updatedFoldersArray); }
-            else (setFolders(newFolder))
+        if (user.folders === []) {setFolders(newFolder) }
+            else {const updatedFoldersArray = [...user.folders, newFolder];
+               setFolders(updatedFoldersArray);setFolders(newFolder)}
       }
+
+      // const updatedFoldersArray = [...user.folders, newFolder];
+      // setFolders(updatedFoldersArray);
 
       function handleUpdateFolder(updatedFolder) {
         const updatedFoldersArray = folders.map((folder) => {

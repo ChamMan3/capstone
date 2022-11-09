@@ -3,10 +3,10 @@ import React, {useState} from "react"
 export default function FolderCard({ songs, user, folder, handleDeleteFolder, handleUpdateFolder}) {
     const [updatedName, setUpdatedName] = useState("")
     const [updatedDetails, setUpdatedDetails] = useState("")
-    const { id, name, details } = folder
+    const { id, title, details } = folder
 
     function handleDeleteFolderClick() {
-        fetch(`/folders/${id}`, {
+        fetch(`http://localhost:3000/folders/${id}`, {
           method: "DELETE",
         });
     
@@ -15,13 +15,13 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
     
     function handleUpdateFolderSubmit(e){
         e.preventDefault()
-        fetch(`/folders/${id}`, {
+        fetch(`http://localhost:3000/folders/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
             body : JSON.stringify({
-                name: updatedName,
+                title: updatedName,
                 details: updatedDetails
             }),
         })
@@ -32,9 +32,8 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
     }
 //NEED TO ADD A BUTTON TO DELETE SONGS FROM FOLDERS IN HERE OR IN A NEW LOWER COMPONENT
     return (
-        <li className="card">
-            
-          <p>{name} "test"</p>
+        <div className="card">
+          <p>{title}</p>
           <p>{details}</p>
           <button onClick={handleDeleteFolderClick}>Delete Folder</button>
           <form onSubmit={handleUpdateFolderSubmit}>
@@ -63,7 +62,7 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
           )}
           })} */}
           
-        </li>
+        </div>
       );
 
 }

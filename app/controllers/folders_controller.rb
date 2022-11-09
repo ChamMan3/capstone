@@ -1,6 +1,6 @@
 class FoldersController < ApplicationController
     
-    skip_before_action :authorized_user, only: [:create, :index]
+    skip_before_action :authorized_user, only: [:create, :index, :destroy, :show, :patch, :update]
 
      def index
         render json: Folder.all

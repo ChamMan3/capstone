@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :articles
-  resources :folders, only: [:index, :create, :delete, :update, :show]
+  resources :folders, only: [:index, :create, :destroy, :update, :show]
   resources :songs
   resources :users
   resources :sessions, only: [:create, :delete]

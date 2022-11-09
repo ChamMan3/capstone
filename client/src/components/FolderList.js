@@ -2,7 +2,7 @@ import React from "react"
 import FolderCard from "./FolderCard"
 
 export default function FolderList({user, folders, handleDeleteFolder, handleUpdateFolder, songs, setSongs}) {
-    if (folders.length > 1){ return (
+     return (
         <ul className="cards">
           {folders.map((folder) => {
             return ( 
@@ -19,7 +19,7 @@ export default function FolderList({user, folders, handleDeleteFolder, handleUpd
                 />)})}
                 
         </ul> 
-    )} 
+    ) 
     // else {
     //   <ul>
     //         <FolderCard

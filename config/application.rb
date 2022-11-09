@@ -12,7 +12,7 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
-require "omniauth"
+# require "omniauth"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -24,6 +24,11 @@ module Capstone
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     
+    if ['development', 'test'].include? ENV['RAILS_ENV']
+      Dotenv::Railtie.load
+    end
+    
+    HOSTNAME = ENV['HOSTNAME']
 
     # Configuration for the application, engines, and railties goes here.
     #
