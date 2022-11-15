@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_08_214806) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_15_202034) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_214806) do
     t.string "album"
     t.string "artist"
     t.bigint "folder_id", null: false
+    t.integer "shazam_id"
+    t.string "image"
+    t.string "genre"
     t.index ["folder_id"], name: "index_songs_on_folder_id"
   end
 
