@@ -1,11 +1,13 @@
 class ArticlesController < ApplicationController
-    def index
+    skip_before_action :authorized_user
+
+     def index
         render json: Article.all
      end
      
      def show
          article = find_params 
-         render json: article,
+         render json: article
      end
  
      def create
