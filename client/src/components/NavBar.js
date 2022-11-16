@@ -9,22 +9,22 @@ export default function NavBar(){
         <>
         <div>
             <NavLink to="/signup">
-                    signup
+                    Signup
             </NavLink>
         </div>
         <div>
             <NavLink to="/search">
-                search
+                Search
             </NavLink>
         </div>
         <div>
             <NavLink to="/profile">
-                profile
+                Profile
             </NavLink>
         </div>
         <div>
             <NavLink to="/login">
-                login            
+                Login            
             </NavLink>
         </div>
         <div>

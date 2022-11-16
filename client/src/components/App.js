@@ -30,7 +30,7 @@ export default function App() {
           <Route path="/login" element={<Login user={user} setUser={setUser} setFolders={setFolders} setSongs={setSongs}/>} />
           <Route path="/signup" element={<Signup user={user} setUser={setUser} setFolders={setFolders} setSongs={setSongs}/>}/>
           <Route path="/" element={<Home user={user}/>}/>
-          <Route path="/lyrics" element={<Lyrics folders={folders} searchedSong={searchedSong} setSearchedSong={setSearchedSong} details={details} setDetails={setDetails} />}/>
+          <Route path="/lyrics" element={<Lyrics user={user} folders={folders} searchedSong={searchedSong} setSearchedSong={setSearchedSong} details={details} setDetails={setDetails} />}/>
         </Routes> 
       </>
       </div>

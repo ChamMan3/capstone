@@ -5,10 +5,6 @@ export default function SearchSongs({songs, setSearchedSong}) {
 
 let navigate = useNavigate()
 
-function showLyrics(data) {
-
-}
-
 
 function handleClick(e){
         console.log(e.target.value)

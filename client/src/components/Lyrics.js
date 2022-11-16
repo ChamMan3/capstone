@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import LyricCard from "./LyricCard"
 
 
-export default function Lyrics ({searchedSong, details, setDetails, folders}) {
+export default function Lyrics ({searchedSong, details, setDetails, folders, user}) {
     const [lyrics, setLyrics] = useState([])
 
     function whatIWant(data) {
@@ -52,7 +52,7 @@ export default function Lyrics ({searchedSong, details, setDetails, folders}) {
     return(
         <>
         
-            <LyricCard details={details} lyrics={lyrics} folders={folders}/>
+            <LyricCard details={details} lyrics={lyrics} folders={folders} user={user} />
         
         </>
         )

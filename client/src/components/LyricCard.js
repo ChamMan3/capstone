@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function LyricCard({details, lyrics, folders}){
+export default function LyricCard({details, lyrics, folders, user}){
 let genre = details[0]
 let img = details[1]
 let key = details[2]
@@ -21,7 +21,8 @@ function handleSubmit(e) {
         image: img,
         genre: genre,
         shazam_id: key,
-        lyrics: lyrics,
+        lyrics: lyrics
+        
       }),
     })
       .then((r) => r.json())
