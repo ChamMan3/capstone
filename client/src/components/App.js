@@ -16,7 +16,8 @@ export default function App() {
   const [songs, setSongs] = useState([])
   const [searchTerm, setSearchTerm] = useState("");
   const [searchedSong, setSearchedSong] = useState(0)
-  const [details, setDetails] = useState([[]])
+  const [details, setDetails] = useState([])
+  const [articles, setArticles] = useState([])
 
 
     return (
@@ -29,7 +30,7 @@ export default function App() {
           <Route path="/search" element={<Search setSongs={setSongs} searchTerm={searchTerm} setSearchTerm={setSearchTerm} setSearchedSong={setSearchedSong}/> }/>
           <Route path="/login" element={<Login user={user} setUser={setUser} setFolders={setFolders} setSongs={setSongs}/>} />
           <Route path="/signup" element={<Signup user={user} setUser={setUser} setFolders={setFolders} setSongs={setSongs}/>}/>
-          <Route path="/" element={<Home user={user}/>}/>
+          <Route path="/" element={<Home user={user} articles={articles} setArticles={setArticles}/>}/>
           <Route path="/lyrics" element={<Lyrics user={user} folders={folders} searchedSong={searchedSong} setSearchedSong={setSearchedSong} details={details} setDetails={setDetails} />}/>
         </Routes> 
       </>

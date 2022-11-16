@@ -17,6 +17,7 @@
 # User.create(name: "4", password: "1234", password_confirmation: "1234", email: "4")
 
 Folder.create(title: "test", details: "test", user_id: 14 )
+Article.create(title: "Test", body: "sup", user_id: 14 )
 puts "done seeding"
 
 

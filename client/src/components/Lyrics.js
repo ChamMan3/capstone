@@ -19,12 +19,17 @@ export default function Lyrics ({searchedSong, details, setDetails, folders, use
     }
 
     function giveSpace(array) {
-        let newArray=[]
-        for (const property in array) {
-            newArray.push(`${array[property]} `);
-          }
-            console.log(newArray)
-            return setLyrics(newArray)
+        // let newArray=[]
+        
+        // for (const property in array) {
+        //     newArray.push(`${array[property]} `);
+        //   }
+        for (let i=0 ; i < array.length; i++)
+            // console.log(newArray)
+            //console.log(text += "The number is " + array[i])
+            // array[i] + "<br>"
+            // return setLyrics(newArray)
+            return (<p>${array[i]}</p>)
     }
     
     

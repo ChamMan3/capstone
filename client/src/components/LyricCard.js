@@ -40,8 +40,15 @@ function handleSubmit(e) {
                 <p>Song: {title}</p>
                 <p>By: {artist}</p>
                 <form onSubmit={handleSubmit}>
+                  <input
+                    type="number"
+                    name="name"
+                    placeholder="Folder Name"
+
+                    />
                     <button type="submit"> Save Song </button>
                 </form>
+                <ul>{folders}</ul>
                 
             
         </>

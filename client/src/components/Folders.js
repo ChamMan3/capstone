@@ -1,12 +1,28 @@
-import React from "react"
+import React, {useEffect} from "react"
 import FolderList from "./FolderList"
 import FolderForm from "./FolderForm"
 export default function Folders ({user, folders, setFolders, songs, setSongs}) {
 
+  // useEffect(()=>{
+  //   fetch(`http://localhost:3000/folders/${user.id}`)
+  //   .then(r=>r.json())
+  //   .then(r=>{
+  //     setFolders(r)})
+  //   }, [])
+
+  // useEffect(() => {
+  //   fetch("http://localhost:6001/plants")
+  //     .then((r) => r.json())
+  //     .then((plantsArray) => {
+  //       setPlants(plantsArray);
+  //     });
+  // }, []);
+
+
     function handleCreateFolder(newFolder) {
-        if (user.folders === []) {setFolders(newFolder) }
-            else {const updatedFoldersArray = [...user.folders, newFolder];
-               setFolders(updatedFoldersArray);setFolders(newFolder)}
+        // if (folders === []) {setFolders(newFolder) }
+            const updatedFoldersArray = [...folders, newFolder];
+               setFolders(updatedFoldersArray);
       }
 
       // const updatedFoldersArray = [...user.folders, newFolder];
@@ -24,7 +40,7 @@ export default function Folders ({user, folders, setFolders, songs, setSongs}) {
       }
 
       function handleDeleteFolder(id) {
-        const updatedFoldersArray = user.folders.filter((folder) => folder.id !== id);
+        const updatedFoldersArray = folders.filter((folder) => folder.id !== id);
         setFolders(updatedFoldersArray);
       }
 
