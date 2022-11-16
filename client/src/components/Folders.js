@@ -3,20 +3,6 @@ import FolderList from "./FolderList"
 import FolderForm from "./FolderForm"
 export default function Folders ({user, folders, setFolders, songs, setSongs}) {
 
-  // useEffect(()=>{
-  //   fetch(`http://localhost:3000/folders/${user.id}`)
-  //   .then(r=>r.json())
-  //   .then(r=>{
-  //     setFolders(r)})
-  //   }, [])
-
-  // useEffect(() => {
-  //   fetch("http://localhost:6001/plants")
-  //     .then((r) => r.json())
-  //     .then((plantsArray) => {
-  //       setPlants(plantsArray);
-  //     });
-  // }, []);
 
 
     function handleCreateFolder(newFolder) {

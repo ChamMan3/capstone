@@ -39,13 +39,13 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
           <form onSubmit={handleUpdateFolderSubmit}>
             <input
               type="text"
-              placeholder=":}"
+              placeholder="Folder Name"
               value={updatedName}
               onChange={(e) => setUpdatedName(e.target.value)}
             />
             <input
               type="text"
-              placeholder=":{"
+              placeholder="Folder Details"
               value={updatedDetails}
               onChange={(e) => setUpdatedDetails(e.target.value)}
             />
