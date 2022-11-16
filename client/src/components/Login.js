@@ -22,7 +22,6 @@ export default function Login ({ user, setUser, setSongs, setFolders }) {
           if (r.ok) {
             r.json().then((data) => {
               setUser(data);
-              // setSongs(data)
               setFolders(data.folders)
             });
           } else {

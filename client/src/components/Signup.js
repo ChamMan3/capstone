@@ -30,7 +30,7 @@ export default function SignUp ({ user, setUser, setSongs, setFolders}) {
       if (r.ok) {
         r.json().then((user) => {
           setUser(user)
-          // setSongs(user)
+          setSongs(user.folders.songs)
           setFolders(user.folders)
         }
         );

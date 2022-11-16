@@ -1,10 +1,12 @@
-import React from "react"
+import React, {useState} from "react"
 
 export default function LyricCard({details, lyrics, folders, user}){
+  const [id, setID] = useState(0)
+
+
 let genre = details[0]
 let img = details[1]
 let key = details[2]
-
 let title = details[3]
 let artist = details[4]
 
@@ -21,7 +23,8 @@ function handleSubmit(e) {
         image: img,
         genre: genre,
         shazam_id: key,
-        lyrics: lyrics
+        lyrics: lyrics,
+        folder_id: id
         
       }),
     })
@@ -41,14 +44,20 @@ function handleSubmit(e) {
                 <p>By: {artist}</p>
                 <form onSubmit={handleSubmit}>
                   <input
-                    type="number"
-                    name="name"
-                    placeholder="Folder Name"
-
+                    type="text"
+                    name="number"
+                    placeholder="Folder ID"
+                    value={id}
+                    onChange={(e) => setID(e.target.value)}
                     />
                     <button type="submit"> Save Song </button>
                 </form>
-                <ul>{folders}</ul>
+                {user ?  
+                
+                <p>Folder Name: "{folders[0].title}" Folder ID: {folders[0].id} </p>
+                    
+                : null }
+                
                 
             
         </>

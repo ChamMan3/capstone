@@ -37,7 +37,7 @@ function handleClick(){
 
     return (
         <div className="searchbar">
-          <label htmlFor="search">Search Tracks:</label>
+          <label htmlFor="search">Search Songs:</label>
           <input
             type="text"
             id="search"

@@ -1,7 +1,7 @@
 import React from "react"
 import FolderCard from "./FolderCard"
 
-export default function FolderList({user, folders, handleDeleteFolder, handleUpdateFolder, songs, setSongs}) {
+export default function FolderList({user, folders, handleDeleteFolder, handleUpdateFolder, songs, setSongs, setClickedFolder}) {
      return (
         <ul className="cards">
           {folders.map((folder) => {
@@ -16,6 +16,7 @@ export default function FolderList({user, folders, handleDeleteFolder, handleUpd
                 user={user}
                 songs={songs}
                 setSongs={setSongs}
+                setClickedFolder={setClickedFolder}
                 />)})}
                 
         </ul> 

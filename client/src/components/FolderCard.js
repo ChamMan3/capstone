@@ -1,9 +1,19 @@
 import React, {useState} from "react"
+import { useNavigate } from "react-router-dom"
 
-export default function FolderCard({ songs, user, folder, handleDeleteFolder, handleUpdateFolder}) {
+export default function FolderCard({ songs, user, folder, handleDeleteFolder, handleUpdateFolder, setClickedFolder}) {
     const [updatedName, setUpdatedName] = useState("")
     const [updatedDetails, setUpdatedDetails] = useState("")
     const { id, title, details } = folder
+
+    let navigate = useNavigate()
+
+    function handleClick(e){
+      console.log(e.target.value)
+      setClickedFolder(e.target.value)
+      navigate(`/folder`)
+  }
+
 
     function handleDeleteFolderClick() {
         fetch(`http://localhost:3000/folders/${id}`, {
@@ -30,7 +40,7 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
             handleUpdateFolder(updatedFolder)
         })
     }
-//NEED TO ADD A BUTTON TO DELETE SONGS FROM FOLDERS IN HERE OR IN A NEW LOWER COMPONENT
+
     return (
         <div className="card">
           <p>{title}</p>
@@ -50,17 +60,8 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
               onChange={(e) => setUpdatedDetails(e.target.value)}
             />
             <button type="submit">Edit me</button>
-    
           </form>
-                {/* {songs.map((song) => {
-                 if(song.folder_id===id) {
-                  return (
-                  
-         
-            <p key={song.id}> {song.title} {song.artist} {song.album}</p> 
-    
-          )}
-          })} */}
+          <button value={id} onClick={handleClick}>See More</button>
           
         </div>
       );
