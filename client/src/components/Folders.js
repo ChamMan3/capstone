@@ -31,6 +31,9 @@ export default function Folders ({user, folders, setFolders, songs, setSongs, se
         <div>
             
             <FolderForm user={user} handleCreateFolder={handleCreateFolder}/>
+            <br></br>
+            <br></br>
+            <br></br>
             <FolderList user={user} folders={folders} handleDeleteFolder={handleDeleteFolder} handleUpdateFolder={handleUpdateFolder} songs={songs} setSongs={setSongs} setClickedFolder={setClickedFolder}/>
         </div>
     )

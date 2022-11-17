@@ -6,33 +6,34 @@ export default function NavBar(){
 
 
     return(
-        <>
-        <div class="navbar">
-            <NavLink to="/signup">
-                    Signup
-            </NavLink>
-        </div>
-        <div class="navbar">
-            <NavLink to="/search">
+        <ul class="navbar">
+        <li >
+            <NavLink className="navLink" to="/search">
                 Search
             </NavLink>
-        </div>
-        <div class="navbar">
-            <NavLink to="/profile">
+        </li>
+        <li >
+            <NavLink className="navLink" to="/profile">
                 Profile
             </NavLink>
-        </div>
-        <div class="navbar">
-            <NavLink to="/login">
-                Login            
-            </NavLink>
-        </div>
-        <div class="navbar">
-            <NavLink to="/">
+        </li>
+        <li>
+            <NavLink className="navLink" to="/">
                 Home           
             </NavLink>
-        </div>
-        </>
+        </li>
+        <li>
+            <NavLink className="navLink" to="/login">
+                Login            
+            </NavLink>
+        </li>
+        <li>
+        <NavLink className="navLink" to="/signup">
+            Signup
+        </NavLink>
+        </li>
+        </ul>
     )
 
 }
+

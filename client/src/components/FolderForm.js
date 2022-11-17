@@ -29,7 +29,8 @@ export default function FolderForm({user, handleCreateFolder}){
 
     return(
         <>
-          <h3> Make a Folder! </h3>
+        <div class="folder">
+          <h3 class="folderH3"> Make a Folder! </h3>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -47,6 +48,7 @@ export default function FolderForm({user, handleCreateFolder}){
               />
               <button type="submit">Create Folder</button>
             </form>
+            </div>
           </>
         )
       }

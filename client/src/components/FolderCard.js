@@ -43,9 +43,8 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
 
     return (
         <div className="card">
-          <p>{title}</p>
+          <h1>{title}</h1>
           <p>{details}</p>
-          <button onClick={handleDeleteFolderClick}>Delete Folder</button>
           <form onSubmit={handleUpdateFolderSubmit}>
             <input
               type="text"
@@ -60,8 +59,13 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
               onChange={(e) => setUpdatedDetails(e.target.value)}
             />
             <button type="submit">Edit me</button>
+
           </form>
-          <button value={folder} onClick={handleClick}>See More</button>
+          <br></br>
+          
+
+          <button value={folder} onClick={handleClick}>See Songs</button>
+          <button onClick={handleDeleteFolderClick}>Delete Folder</button>
           
         </div>
       );

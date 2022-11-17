@@ -20,12 +20,15 @@ let navigate= useNavigate()
         {user ? 
         <>
             <Logout user={user} setUser={setUser}/> 
+            <br></br>
+            <br></br>
+            
             <Folders user={user} folders={folders} setFolders={setFolders} songs={songs} setSongs={setSongs} setClickedFolder={setClickedFolder}/>
         </>
     : 
         <>
     <button onClick={handleClick1}>Dont have an account? Click Me! </button>
-    <button onClick={handleClick2}>Forgot to log in? No worries Click Me!</button> 
+    <button onClick={handleClick2}>Forgot to log in? Click Me!</button> 
         </>
     }
         </>
