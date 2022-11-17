@@ -8,9 +8,9 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
 
     let navigate = useNavigate()
 
-    function handleClick(e){
-      console.log(e.target.value)
-      setClickedFolder(e.target.value)
+    function handleClick(){
+      console.log(folder)
+      setClickedFolder(folder)
       navigate(`/folder`)
   }
 
@@ -61,7 +61,7 @@ export default function FolderCard({ songs, user, folder, handleDeleteFolder, ha
             />
             <button type="submit">Edit me</button>
           </form>
-          <button value={id} onClick={handleClick}>See More</button>
+          <button value={folder} onClick={handleClick}>See More</button>
           
         </div>
       );

@@ -27,6 +27,7 @@ function handleClick(){
             setIsLoaded(true)
             setSongs(response.tracks.hits)
             setArtists(response.artists.hits)
+            console.log(response)
         })
         .catch(err => {
             console.error(err)
