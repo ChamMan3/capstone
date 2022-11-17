@@ -36,12 +36,11 @@ function handleSubmit(e) {
 
     return(
         <>
-
-                <p>Genre: {genre}</p>
-                <img src={img} alt={title}/>
-                <p>{lyrics}</p>
                 <p>Song: {title}</p>
                 <p>By: {artist}</p>
+                <p>Genre: {genre}</p>
+                <img class="coverart" src={img} alt={title}/>
+                <p class="lyrics">{lyrics}</p>
                 <form onSubmit={handleSubmit}>
                   <input
                     type="text"

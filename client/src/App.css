@@ -17,7 +17,7 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -35,4 +35,87 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+p {
+
+  color: #000000
+}
+
+input {
+  color: #522727;
+  background : #aa2c2c
+}
+ 
+a {
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  outline: 0;
+  cursor: pointer;
+  color:#000000;
+  
+  
+
+}
+
+a:hover {
+  color: #000000;
+  background-color: #7b1ccf;
+  transition: 500ms ease all;
+}
+
+a:active {
+  color: rgb(240, 244, 13);
+}
+
+
+p.lyrics{
+  text-align: center
+}
+
+body {
+  backdrop-filter: blur(20px);
+  line-height: 1.4;
+  min-height: 100vh;
+  margin: 1rem;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  background-color: #a461df;
+}
+
+.navbar {
+  display: flex;
+  list-style-type: none;
+  /* align-items: flex-start; */
+  flex-wrap: wrap;
+  /* flex: 1; */
+  /* row-gap: 10px; */
+  flex-direction: row;
+  /* align-content: center; */
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  transition: 500ms ease all;
+  transform: scale(.8);
+  color: #000000;
+  background-color: #eaea6d ;
+}
+
+button {
+  background-color: #8b48c6;
+  color: rgb(0, 0, 0);
+  /* padding: 14px 20px; */
+  margin: 8px 0;
+  
+  cursor: pointer;
+  width: 10%;
+  opacity: 0.9;
+}
+
+form {
+  text-align: center;
+  flex-direction: column;
 }

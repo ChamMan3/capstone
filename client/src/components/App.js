@@ -8,6 +8,7 @@ import Login from "./Login"
 import Home from "./Home"
 import Lyrics from "./Lyrics"
 import IndividualFolder from "./IndividualFolder";
+import "../App.css"
 
 
 

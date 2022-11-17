@@ -18,6 +18,10 @@
 
 Folder.create(title: "test", details: "test", user_id: 14 )
 Article.create(title: "Test", body: "sup", user_id: 14 )
+Article.create(title: "Who was MF DOOM? The Man Behind the Mask", 
+body: 
+"Daniel Dumile was many things. The super mothafuckin Villain. Your favorite Rapper's favorite Rapper. "
+, user_id: 14 )
 puts "done seeding"
 
 
